@@ -9,7 +9,7 @@ using TRMDataManager.Library.Models;
 
 namespace TRMDataManager.Controllers
 {
-	[Authorize]
+	[Authorize(Roles = "Cashier")]
     public class ProductController : ApiController
     {
 		public List<ProductModel> Get()
@@ -17,6 +17,5 @@ namespace TRMDataManager.Controllers
 			ProductData data = new ProductData();
 			return data.GetProducts();
 		}
-
 	}
 }
